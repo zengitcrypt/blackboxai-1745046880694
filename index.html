@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lotinu Stake - Multi Wallet Connect</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header" role="banner">
+    <img src="https://lotinu.com/images/logo-p-800.png" alt="Lotinu Mascot" class="lotinu-mascot" />
+    <h1 class="title">Lotinu Stake</h1>
+    <button id="connectWalletBtn" class="connect-wallet-btn">Connect Wallet</button>
+  </header>
+
+  <main class="main-content" role="main" aria-label="Staking information">
+    <div class="dashboard-container">
+      <section class="staking-stats" aria-label="Staking statistics">
+        <div class="info-item" tabindex="0">
+          <h2>Total Staked:</h2>
+          <p id="totalStakedLb">---</p>
+        </div>
+        <div class="info-item" tabindex="0">
+          <h2>APY:</h2>
+          <p id="apyEst">---</p>
+        </div>
+        <div class="info-item" tabindex="0">
+          <h2>Unclaimed Treats:</h2>
+          <p id="rewardsLb">---</p>
+        </div>
+        <div class="info-item" tabindex="0">
+          <h2>Staked Tokens:</h2>
+          <p id="stakedLb">---</p>
+        </div>
+        <div class="info-item" tabindex="0">
+          <h2>Bone Lock Timer:</h2>
+          <p id="unlockLb">---</p>
+        </div>
+      </section>
+      <section class="staking-actions" aria-label="Staking actions">
+        <input type="number" id="tokenAmtTb" min="0" step="any" placeholder="Enter amount to stake" aria-label="Amount to stake" />
+        <button class="stakeBtn">Approve</button>
+        <button class="harvestRewardsBtn">Claim Rewards</button>
+        <button class="withdrawTokensBtn">Withdraw Tokens</button>
+      </section>
+    </div>
+  </main>
+
+  <!-- Wallet Selection Modal -->
+  <div id="walletModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="walletModalTitle">
+    <div class="modal-content">
+      <button id="closeModalBtn" class="close-btn" aria-label="Close wallet selection modal">&times;</button>
+      <h2 id="walletModalTitle" class="modal-title">Choose Your Wallet</h2>
+      <p class="modal-note">
+        Please Note: If you are using the MetaMask Mobile App, please select the 'MetaMask' option and use within the 'MetaMask Browser'.
+      </p>
+      <div id="walletOptions" class="wallet-options">
+        <!-- Wallet option cards will be dynamically inserted here -->
+      </div>
+      <div id="walletError" class="wallet-error" role="alert" aria-live="assertive"></div>
+    </div>
+  </div>
+
+  <script src="walletConfig.js"></script>
+  <script src="wallet.js"></script>
+</body>
+</html>
